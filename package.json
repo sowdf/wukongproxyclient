@@ -1,0 +1,30 @@
+{
+  "name": "wukongproxyclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "packager": "electron-packager ./ wukongProxy --all --out ./outApp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sowdf/wukongproxyclient.git"
+  },
+  "dependencies": {
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1"
+  },
+  "devDependencies": {
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sowdf/wukongproxyclient/issues"
+  },
+  "homepage": "https://github.com/sowdf/wukongproxyclient#readme"
+}
