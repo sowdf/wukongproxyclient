@@ -3,9 +3,10 @@ const {app, BrowserWindow} = require('electron');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
-function createWindow () {
+
+function createWindow() {
     // 创建浏览器窗口。
-    win = new BrowserWindow({width: 800, height: 600})
+    win = new BrowserWindow({width: 300, height: 600})
 
     // 然后加载应用的 index.html。
     win.loadFile('index.html')

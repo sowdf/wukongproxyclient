@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
-    "packager": "electron-packager ./ wukongProxy --all --out ./outApp"
+    "packager": "electron-packager ./ wukongProxy --all --out ./outApp",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "react_start": "PORT=3000 react-app-rewired start",
+    "react_build": "react-scripts build"
   },
   "repository": {
     "type": "git",
@@ -15,11 +19,17 @@
   "dependencies": {
     "request": "^2.88.0",
     "socket.io": "^2.1.1",
-    "socket.io-client": "^2.1.1"
+    "socket.io-client": "^2.1.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.5"
   },
   "devDependencies": {
     "electron": "^2.0.8",
-    "electron-packager": "^12.1.1"
+    "electron-packager": "^12.1.1",
+    "node-sass-chokidar": "^1.3.3",
+    "react-app-rewire-hot-loader": "^1.0.1",
+    "react-app-rewired": "^1.5.2"
   },
   "author": "",
   "license": "ISC",
