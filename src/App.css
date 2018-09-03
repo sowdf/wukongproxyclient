@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/*  reset */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td, figure {
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+del, ins {
+  text-decoration: none; }
+
+fieldset, img {
+  border: 0; }
+
+button, input, select, textarea {
+  font-family: "Microsoft Yahei",Arial,Helvetica,sans-serif; }
+
+input, select, img {
+  vertical-align: middle; }
+
+input, select {
+  outline: none; }
+
+ul, ol {
+  list-style: none; }
+
+label {
+  cursor: pointer; }
+
+i {
+  font-style: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%; }
+
+address, cite, dfn, em, var {
+  font-style: normal; }
+
+body {
+  -ms-text-size-adjust: none;
+  -o-user-select: none;
+  -o-text-size-adjust: none;
+  user-select: none;
+  text-size-adjust: none;
+  font: 14px "微软雅黑",Arial,Helvetica,sans-serif;
+  min-height: 100%; }
+
+a, button {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  text-decoration: none; }
+
+div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  visibility: hidden;
+  display: block;
+  clear: both;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+button {
+  outline: none;
+  border: none; }
+
+.clearfix {
+  zoom: 1; }
+
+.clear {
+  clear: both; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+/*  end reset */
+/* 过长省略好 */
+.m_inputKey .box {
+  width: 358px;
+  margin: 0 auto; }
+
+.m_inputKey p {
+  padding-top: 41px;
+  font-size: 16px;
+  color: #999999;
+  margin-bottom: 13px;
+  line-height: 1; }
+
+.m_inputKey input {
+  width: 356px;
+  height: 48px;
+  border: solid 1px #bfbfbf;
+  color: #000000;
+  font-size: 16px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 4px; }
+
+.m_inputKey button {
+  background: #4390e1;
+  width: 356px;
+  height: 48px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 28px; }
+
+.m_inputKey a {
+  width: 356px;
+  height: 48px;
+  line-height: 48px;
+  display: block;
+  background: #06ccb2;
+  text-align: center;
+  color: #ffffff;
+  font-size: 0;
+  margin-top: 30px; }
+  .m_inputKey a i {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    background: url("./images/icon_key.png") no-repeat;
+    margin-right: 8px; }
+  .m_inputKey a span {
+    font-size: 18px;
+    vertical-align: middle; }
+
+.m_connect {
+  padding-top: 40px;
+  width: 358px;
+  margin: 0 auto; }
+  .m_connect p {
+    font-size: 16px;
+    color: #999999;
+    margin-bottom: 13px;
+    line-height: 1; }
+  .m_connect div {
+    margin-bottom: 20px; }
+  .m_connect input {
+    width: 258px;
+    height: 48px;
+    border: solid 1px #bfbfbf;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 4px; }
+  .m_connect button {
+    width: 88px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    float: right;
+    border-radius: 4px;
+    background: #4390e1;
+    cursor: pointer; }

@@ -1,4 +1,5 @@
 const {app, BrowserWindow} = require('electron');
+const pkg = require('./package.json') // 引用package.json
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -6,13 +7,24 @@ let win
 
 function createWindow() {
     // 创建浏览器窗口。
-    win = new BrowserWindow({width: 300, height: 600})
+    win = new BrowserWindow({width: 420, height: 600})
 
     // 然后加载应用的 index.html。
-    win.loadFile('index.html')
+    //win.loadFile('http://localhost:3000');
+    //win.loadFile('index.html')
+	//win.loadURL("http://localhost:3000/");
+	if(pkg.DEV){
+		win.loadURL("http://localhost:3000/")
+	}else{
+		win.loadURL(url.format({
+			pathname: path.join(__dirname, './build/index.html'),
+			protocol: 'file:',
+			slashes: true
+		}))
+	}
 
     // 打开开发者工具
-    //win.webContents.openDevTools()
+    win.webContents.openDevTools()
 
     // 当 window 被关闭，这个事件会被触发。
     win.on('closed', () => {

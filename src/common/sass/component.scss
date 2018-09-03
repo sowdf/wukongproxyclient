@@ -1,0 +1,149 @@
+$base : 40;
+@import "function.scss";
+@mixin btn($url,$w,$h){
+  display: inline-block;
+  width:$w/$base * 1rem;
+  height:$h/$base * 1rem;
+  background:$url no-repeat;
+  background-size:100% auto;
+}
+
+@mixin background($url,$w,$h){
+  @if($w == 100%){
+    width:$w;
+  }@else {
+    width:$w/$base * 1rem;
+  }
+
+  @if($h == 100%){
+    height:$h;
+  }@else {
+    height:$h/$base * 1rem;
+  }
+
+  background:$url no-repeat;
+  background-size:100% auto;
+  display: inline-block;
+}
+
+@mixin centerX(){
+  position:absolute;
+  left:50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+}
+
+@mixin oneLine($color:#ececec,$height:1px){
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index:1;
+		width: 100%;
+		height: $height;
+		content: '';
+		transform: scaleY(0.5);
+		-webkit-transform: scaleY(0.5);
+		-moz-transform: scaleY(0.5);
+		-ms-transform: scaleY(0.5);
+		background: $color;
+	}
+
+}
+
+@mixin centerY(){
+  position:absolute;
+  top:50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+}
+
+@mixin center(){
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform:translateX(-50%) translateY(-50%);
+  -moz-transform:translateX(-50%) translateY(-50%);
+}
+
+@mixin circle($w,$h,$fontSize,$color,$backgroundColor){
+  display: inline-block;
+  font-size:rem($fontSize);
+  width:rem($w);
+  height:rem($h);
+  line-height:rem($h);
+  color:$color;
+  background:$backgroundColor;
+  border-radius:100%;
+  text-align:center;
+}
+
+@mixin green_btn($w:rem(138),$h:rem(52),$fontSize:rem(26),$borderRadius:rem(4)){
+  display: inline-block;
+  width:$w;
+  height:$h;
+  background:#54ba3d;
+  text-align:center;
+  font-size:$fontSize;
+  border-radius:$borderRadius;
+  line-height:$h;
+  color:#fff;
+}
+
+@mixin whr($w,$h,$r){
+  width:$w;
+  height:$h;
+  border-radius:$r;
+}
+/* 过长省略好 */
+@mixin omit(){
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+@mixin cfl($color,$fontSize,$lineHeight:1){
+  $proxyColor : '#' + $color;
+  color: $color;
+  font-size:rem($fontSize);
+  line-height:rem($lineHeight);
+}
+/* margin  */
+@mixin margin($t:0,$r:0,$b:0,$l:0){
+  margin:rem($t) rem($r) rem($b) rem($l);
+}
+
+/* padding  */
+@mixin padding($t:0,$r:0,$b:0,$l:0){
+  padding:rem($t) rem($r) rem($b) rem($l);
+}
+
+/* 前缀 */
+$vendors: webkit, moz, ms, o;
+@mixin prefix($type, $val) {
+  #{$type}: #{$val};
+  @each $v in $vendors {
+    #{"-" + $v + "-" + $type}: #{$val};
+  }
+}
+
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}

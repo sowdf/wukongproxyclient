@@ -1,6 +1,6 @@
-let net = require('net');
-let io = require('socket.io-client');
-let request = require('request');
+let net = window.require('net');
+let io = window.require('socket.io-client');
+let request = window.require('request');
 const serverHost = "http://120.24.169.84";
 //const serverHost = "http://localhost";
 const serverPort = "3839";
@@ -76,4 +76,4 @@ class Client{
 }
 
 
-module.exports = Client;
+export default Client;

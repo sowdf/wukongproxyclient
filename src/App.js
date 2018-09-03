@@ -1,15 +1,22 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import InputKey from './container/InputKey';
+import Connect from './container/Connect';
+import model from './Model';
+
+
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-            1232131212312
-      </div>
-    );
-  }
+	render() {
+		let {hasKey} = model;
+		return (
+			<div className="App">
+				{
+					hasKey ? <Connect/> : <InputKey/>
+				}
+			</div>
+		);
+	}
 }
 
 export default App;

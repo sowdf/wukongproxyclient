@@ -1,0 +1,636 @@
+$base:40;@mixin douwa_no_data(){
+  width:300rem/$base;
+  height:300rem/$base;
+  background:url(./images/douwa_no_data.png) no-repeat;
+  background-size:100% 100%;
+}
+@function douwa_no_dataWidth(){
+    @return 300rem/$base;
+}
+@function douwa_no_dataHeight(){
+    @return 300rem/$base;
+}
+@mixin error(){
+  width:238rem/$base;
+  height:431rem/$base;
+  background:url(./images/error.png) no-repeat;
+  background-size:100% 100%;
+}
+@function errorWidth(){
+    @return 238rem/$base;
+}
+@function errorHeight(){
+    @return 431rem/$base;
+}
+@mixin fixedBarArrow(){
+  width:35rem/$base;
+  height:18rem/$base;
+  background:url(./images/fixedBarArrow.png) no-repeat;
+  background-size:100% 100%;
+}
+@function fixedBarArrowWidth(){
+    @return 35rem/$base;
+}
+@function fixedBarArrowHeight(){
+    @return 18rem/$base;
+}
+@mixin i_connoisseur(){
+  width:42rem/$base;
+  height:48rem/$base;
+  background:url(./images/i_connoisseur.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_connoisseurWidth(){
+    @return 42rem/$base;
+}
+@function i_connoisseurHeight(){
+    @return 48rem/$base;
+}
+@mixin i_defaultAvatar(){
+  width:72rem/$base;
+  height:72rem/$base;
+  background:url(./images/i_defaultAvatar.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_defaultAvatarWidth(){
+    @return 72rem/$base;
+}
+@function i_defaultAvatarHeight(){
+    @return 72rem/$base;
+}
+@mixin i_delete(){
+  width:48rem/$base;
+  height:45rem/$base;
+  background:url(./images/i_delete.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_deleteWidth(){
+    @return 48rem/$base;
+}
+@function i_deleteHeight(){
+    @return 45rem/$base;
+}
+@mixin i_fixedBarArrow(){
+  width:35rem/$base;
+  height:18rem/$base;
+  background:url(./images/i_fixedBarArrow.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_fixedBarArrowWidth(){
+    @return 35rem/$base;
+}
+@function i_fixedBarArrowHeight(){
+    @return 18rem/$base;
+}
+@mixin i_fixedBarArrowActive(){
+  width:35rem/$base;
+  height:18rem/$base;
+  background:url(./images/i_fixedBarArrowActive.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_fixedBarArrowActiveWidth(){
+    @return 35rem/$base;
+}
+@function i_fixedBarArrowActiveHeight(){
+    @return 18rem/$base;
+}
+@mixin i_gameDeveloper(){
+  width:44rem/$base;
+  height:44rem/$base;
+  background:url(./images/i_gameDeveloper.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_gameDeveloperWidth(){
+    @return 44rem/$base;
+}
+@function i_gameDeveloperHeight(){
+    @return 44rem/$base;
+}
+@mixin i_gameScoreHigh(){
+  width:91rem/$base;
+  height:85rem/$base;
+  background:url(./images/i_gameScoreHigh.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_gameScoreHighWidth(){
+    @return 91rem/$base;
+}
+@function i_gameScoreHighHeight(){
+    @return 85rem/$base;
+}
+@mixin i_gameScoreStar(){
+  width:91rem/$base;
+  height:85rem/$base;
+  background:url(./images/i_gameScoreStar.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_gameScoreStarWidth(){
+    @return 91rem/$base;
+}
+@function i_gameScoreStarHeight(){
+    @return 85rem/$base;
+}
+@mixin i_game_star_0(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_0.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_0Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_0Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_1(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_1.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_1Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_1Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_10(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_10.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_10Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_10Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_2(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_2.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_2Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_2Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_3(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_3.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_3Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_3Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_4(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_4.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_4Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_4Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_5(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_5.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_5Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_5Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_6(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_6.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_6Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_6Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_7(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_7.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_7Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_7Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_8(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_8.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_8Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_8Height(){
+    @return 23rem/$base;
+}
+@mixin i_game_star_9(){
+  width:145rem/$base;
+  height:23rem/$base;
+  background:url(./images/i_game_star_9.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_game_star_9Width(){
+    @return 145rem/$base;
+}
+@function i_game_star_9Height(){
+    @return 23rem/$base;
+}
+@mixin i_moreArrow(){
+  width:19rem/$base;
+  height:37rem/$base;
+  background:url(./images/i_moreArrow.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_moreArrowWidth(){
+    @return 19rem/$base;
+}
+@function i_moreArrowHeight(){
+    @return 37rem/$base;
+}
+@mixin i_more_arrow(){
+  width:19rem/$base;
+  height:37rem/$base;
+  background:url(./images/i_more_arrow.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_more_arrowWidth(){
+    @return 19rem/$base;
+}
+@function i_more_arrowHeight(){
+    @return 37rem/$base;
+}
+@mixin i_noData(){
+  width:155rem/$base;
+  height:43rem/$base;
+  background:url(./images/i_noData.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_noDataWidth(){
+    @return 155rem/$base;
+}
+@function i_noDataHeight(){
+    @return 43rem/$base;
+}
+@mixin i_noPraise(){
+  width:50rem/$base;
+  height:44rem/$base;
+  background:url(./images/i_noPraise.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_noPraiseWidth(){
+    @return 50rem/$base;
+}
+@function i_noPraiseHeight(){
+    @return 44rem/$base;
+}
+@mixin i_praise(){
+  width:50rem/$base;
+  height:44rem/$base;
+  background:url(./images/i_praise.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_praiseWidth(){
+    @return 50rem/$base;
+}
+@function i_praiseHeight(){
+    @return 44rem/$base;
+}
+@mixin i_recommend(){
+  width:38rem/$base;
+  height:38rem/$base;
+  background:url(./images/i_recommend.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_recommendWidth(){
+    @return 38rem/$base;
+}
+@function i_recommendHeight(){
+    @return 38rem/$base;
+}
+@mixin i_reply(){
+  width:44rem/$base;
+  height:42rem/$base;
+  background:url(./images/i_reply.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_replyWidth(){
+    @return 44rem/$base;
+}
+@function i_replyHeight(){
+    @return 42rem/$base;
+}
+@mixin i_replyMoreArrow(){
+  width:19rem/$base;
+  height:37rem/$base;
+  background:url(./images/i_replyMoreArrow.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_replyMoreArrowWidth(){
+    @return 19rem/$base;
+}
+@function i_replyMoreArrowHeight(){
+    @return 37rem/$base;
+}
+@mixin i_star_0(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_0.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_0Width(){
+    @return 224rem/$base;
+}
+@function i_star_0Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_1(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_1.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_1Width(){
+    @return 224rem/$base;
+}
+@function i_star_1Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_10(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_10.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_10Width(){
+    @return 224rem/$base;
+}
+@function i_star_10Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_2(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_2.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_2Width(){
+    @return 224rem/$base;
+}
+@function i_star_2Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_3(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_3.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_3Width(){
+    @return 224rem/$base;
+}
+@function i_star_3Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_4(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_4.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_4Width(){
+    @return 224rem/$base;
+}
+@function i_star_4Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_5(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_5.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_5Width(){
+    @return 224rem/$base;
+}
+@function i_star_5Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_6(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_6.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_6Width(){
+    @return 224rem/$base;
+}
+@function i_star_6Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_7(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_7.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_7Width(){
+    @return 224rem/$base;
+}
+@function i_star_7Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_8(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_8.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_8Width(){
+    @return 224rem/$base;
+}
+@function i_star_8Height(){
+    @return 41rem/$base;
+}
+@mixin i_star_9(){
+  width:224rem/$base;
+  height:41rem/$base;
+  background:url(./images/i_star_9.png) no-repeat;
+  background-size:100% 100%;
+}
+@function i_star_9Width(){
+    @return 224rem/$base;
+}
+@function i_star_9Height(){
+    @return 41rem/$base;
+}
+@mixin icon_content_more(){
+  width:27rem/$base;
+  height:14rem/$base;
+  background:url(./images/icon_content_more.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_content_moreWidth(){
+    @return 27rem/$base;
+}
+@function icon_content_moreHeight(){
+    @return 14rem/$base;
+}
+@mixin icon_content_more_up(){
+  width:27rem/$base;
+  height:14rem/$base;
+  background:url(./images/icon_content_more_up.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_content_more_upWidth(){
+    @return 27rem/$base;
+}
+@function icon_content_more_upHeight(){
+    @return 14rem/$base;
+}
+@mixin icon_pc(){
+  width:39rem/$base;
+  height:36rem/$base;
+  background:url(./images/icon_pc.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_pcWidth(){
+    @return 39rem/$base;
+}
+@function icon_pcHeight(){
+    @return 36rem/$base;
+}
+@mixin icon_phone(){
+  width:30rem/$base;
+  height:42rem/$base;
+  background:url(./images/icon_phone.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_phoneWidth(){
+    @return 30rem/$base;
+}
+@function icon_phoneHeight(){
+    @return 42rem/$base;
+}
+@mixin icon_share(){
+  width:44rem/$base;
+  height:42rem/$base;
+  background:url(./images/icon_share.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_shareWidth(){
+    @return 44rem/$base;
+}
+@function icon_shareHeight(){
+    @return 42rem/$base;
+}
+@mixin icon_star(){
+  width:42rem/$base;
+  height:38rem/$base;
+  background:url(./images/icon_star.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_starWidth(){
+    @return 42rem/$base;
+}
+@function icon_starHeight(){
+    @return 38rem/$base;
+}
+@mixin icon_star_active(){
+  width:42rem/$base;
+  height:38rem/$base;
+  background:url(./images/icon_star_active.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_star_activeWidth(){
+    @return 42rem/$base;
+}
+@function icon_star_activeHeight(){
+    @return 38rem/$base;
+}
+@mixin icon_unfold(){
+  width:8rem/$base;
+  height:40rem/$base;
+  background:url(./images/icon_unfold.png) no-repeat;
+  background-size:100% 100%;
+}
+@function icon_unfoldWidth(){
+    @return 8rem/$base;
+}
+@function icon_unfoldHeight(){
+    @return 40rem/$base;
+}
+@mixin j_loading(){
+  width:1080rem/$base;
+  height:1560rem/$base;
+  background:url(./images/j_loading.png) no-repeat;
+  background-size:100% 100%;
+}
+@function j_loadingWidth(){
+    @return 1080rem/$base;
+}
+@function j_loadingHeight(){
+    @return 1560rem/$base;
+}
+@mixin noDataDouwa(){
+  width:181rem/$base;
+  height:278rem/$base;
+  background:url(./images/noDataDouwa.png) no-repeat;
+  background-size:100% 100%;
+}
+@function noDataDouwaWidth(){
+    @return 181rem/$base;
+}
+@function noDataDouwaHeight(){
+    @return 278rem/$base;
+}
+@mixin run(){
+  width:450rem/$base;
+  height:450rem/$base;
+  background:url(./images/run.gif) no-repeat;
+  background-size:100% 100%;
+}
+@function runWidth(){
+    @return 450rem/$base;
+}
+@function runHeight(){
+    @return 450rem/$base;
+}
+@mixin sprites(){
+  width:3840rem/$base;
+  height:120rem/$base;
+  background:url(./images/sprites.png) no-repeat;
+  background-size:100% 100%;
+}
+@function spritesWidth(){
+    @return 3840rem/$base;
+}
+@function spritesHeight(){
+    @return 120rem/$base;
+}
