@@ -3,7 +3,7 @@ let io = window.require('socket.io-client');
 let request = window.require('request');
 const serverHost = "http://120.24.169.84";
 //const serverHost = "http://localhost";
-const serverPort = "3839";
+const serverPort = "3838";
 
 
 class Client{
@@ -76,4 +76,4 @@ class Client{
 }
 
 
-export default Client;
+module.exports = Client;

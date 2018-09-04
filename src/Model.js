@@ -1,19 +1,22 @@
 let net = window.require('net');
 let io = window.require('socket.io-client');
 let request = window.require('request');
-const serverHost = "http://120.24.169.84";
+const host = "http://www.sowdf.com";
+//const host = "http://localhost:4001";
+const serverHost = "http://service.sowdf.com";
 //const serverHost = "http://localhost";
-const serverPort = "3839";
+const serverPort = "80";
 
 
 class Client{
-	constructor({key,port}){
+	constructor(key,port,callback){
 		this.listenPort = port;
+		this.callback = callback ||function(){};
 		console.log(port,key);
 		this.getHost(key);
 	}
 	getHost(key){
-		request.get(serverHost + ':4001/client/getHost?key='+key,(err,response,body)=>{
+		request.get(host + '/client/getHost?key='+key,(err,response,body)=>{
 			if(err){
 				console.log(err);
 				return false;
@@ -23,8 +26,8 @@ class Client{
 			if(code === 100){
 				let {host} = result;
 				this.connect(host,key);
-				alert(`您的访问域名：http://${host}.sowdf.com:3737`);
 			}
+			this.callback(JSON.parse(body));
 			return console.log(message);
 		})
 	}
@@ -75,11 +78,45 @@ class Client{
 	}
 }
 
+class Interface {
+	constructor(){
+
+	}
+	checkKeyIsExist(key,callback){
+		request.post(`${host}/client/checkKeyIsExist`,{form:{key:key}},(err,response,body)=>{
+			if(err){
+				return console.log(err);
+			}
+			callback && callback(JSON.parse(body));
+		});
+	}
+}
+
+
 
 class Model {
 	constructor(){
 		this.eventFree = {};
 		this.hasKey = false;
+		this.interface = new Interface();
+		this.key = this.getKey();
+		if(this.key){
+			this.hasKey = true;
+		}
+		this.render();
+	}
+	/*
+	* 连接
+	* */
+	connect(key,port){
+		new Client(key,port,(data)=>{
+			let {code,message,result} = data;
+			if(code == 100){
+				this.httpAddress = result.http;
+			}
+			this.toast(message);
+			this.render();
+		})
 	}
 	/*
      *  发布
@@ -96,6 +133,12 @@ class Model {
 			fn.apply(this, arguments);
 		}
 	}
+	getKey(){
+		return localStorage.keyString;
+	}
+	saveKey(key){
+		localStorage.keyString = key;
+	}
 	/*
 *  订阅
 * */
@@ -106,6 +149,35 @@ class Model {
 		}
 		this.eventFree[event].push(fn);
 	}
+	checkKey(key){
+		if(!key){
+			return this.toast('请输入您的key值～～');
+		}
+		this.interface.checkKeyIsExist(key,(data)=>{
+			let {code,message,result} = data;
+			if(code !== 100){
+				return this.toast(message);
+			}
+			this.saveKey(key);
+			this.hasKey = true;
+			this.key = key;
+			this.render();
+		});
+
+	}
+	render(){
+		this.inform('render');
+	}
+	toast(message){
+		this.toastOnOff = true;
+		this.toastMessage = message;
+		setTimeout(()=>{
+			this.toastOnOff = false;
+			this.render();
+		},2000)
+		this.render();
+	}
+
 
 }
 

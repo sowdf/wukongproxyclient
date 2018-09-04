@@ -149,3 +149,16 @@ button {outline: none;border:none;}
 }
 
 
+.m_toast {
+	height:40px;
+	line-height:40px;
+	background:rgba(0,0,0,0.5);
+	color: #ffffff;
+	padding:0 30px;
+	font-size:18px;
+	text-align: center;
+	@include centerX();
+	border-radius:30px;
+	bottom:100px;
+}
+
