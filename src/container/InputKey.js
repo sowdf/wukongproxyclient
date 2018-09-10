@@ -12,7 +12,9 @@ class InputKey extends Component {
 		let key = this.input.value;
 		model.checkKey(key);
 	}
-
+	openHandle(){
+		model.openRegister();
+	}
 	render() {
 		let {} = this.props;
 		let {data} = model;
@@ -24,7 +26,7 @@ class InputKey extends Component {
 						this.input = input
 					}} placeholder="请输入您的Key"/>
 					<button onClick={this.submitKey.bind(this)}>确认</button>
-					<a href="http://www.baidu.com">
+					<a onClick={this.openHandle}>
 						<i></i><span>如何获取Key→</span>
 					</a>
 				</div>

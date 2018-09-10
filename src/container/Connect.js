@@ -12,6 +12,11 @@
 	 	let port = this.input.value;
 	 	model.connect(model.key,port);
 	 }
+	 copyHandle(){
+		 this.httpAddress.select();
+		 document.execCommand("Copy");
+		 model.toast('复制成功～～');
+	 }
      render() {
          let {} = this.props;
          let {data,httpAddress} = model;
@@ -28,8 +33,10 @@
 					 您的http地址是
 				 </p>
 				 <div>
-					 <input type="text" value={httpAddress}/>
-					 <button>复制</button>
+					 <input type="text" value={httpAddress} ref={(input)=>{
+					 	this.httpAddress = input;
+					 }}/>
+					 <button onClick={this.copyHandle.bind(this)}>复制</button>
 				 </div>
 				{/* <p>
 					 您的https地址是

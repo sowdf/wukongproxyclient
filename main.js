@@ -18,7 +18,7 @@ function createWindow() {
 	if(pkg.DEV){
 		win.loadURL("http://localhost:3000/")
 		// 打开开发者工具
-		//win.webContents.openDevTools();
+		win.webContents.openDevTools();
 	}else{
 		win.loadURL(url.format({
 			pathname: path.join(__dirname, './build/index.html'),

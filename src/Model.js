@@ -1,6 +1,7 @@
 let net = window.require('net');
 let io = window.require('socket.io-client');
 let request = window.require('request');
+const {shell} = window.require('electron');
 const host = "http://www.sowdf.com";
 //const host = "http://localhost:4001";
 const serverHost = "http://service.sowdf.com";
@@ -90,6 +91,9 @@ class Interface {
 			callback && callback(JSON.parse(body));
 		});
 	}
+	openLink(link){
+		shell.openExternal(link);
+	}
 }
 
 
@@ -176,6 +180,9 @@ class Model {
 			this.render();
 		},2000)
 		this.render();
+	}
+	openRegister(){
+		this.interface.openLink('http://www.wkproxy.com');
 	}
 
 
