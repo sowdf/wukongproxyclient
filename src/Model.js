@@ -2,82 +2,101 @@ let net = window.require('net');
 let io = window.require('socket.io-client');
 let request = window.require('request');
 const {shell} = window.require('electron');
-const host = "http://www.sowdf.com";
 //const host = "http://localhost:4001";
-const serverHost = "http://service.sowdf.com";
 //const serverHost = "http://localhost";
-const serverPort = "80";
 
+const {host,serverHost,serverPort} = require('./config.js');
 
-class Client{
-	constructor(key,port,callback){
-		this.listenPort = port;
-		this.callback = callback ||function(){};
-		console.log(port,key);
-		this.getHost(key);
+class Client {
+	constructor(key,port,callback) {
+		//this.port = readlineSync.question('请输入转发的本地端口(8080):');
+		//this.token = readlineSync.question('请输入授权码(token):');
+		this.key = key;
+		this.port = port;
+		this.callback = callback || function(){};
+		this.getHost();
 	}
-	getHost(key){
-		request.get(host + '/client/getHost?key='+key,(err,response,body)=>{
+	getHost(){
+		request.get(`${host}/client/getHost?key=${this.key}`,(err,response,body)=>{
 			if(err){
 				console.log(err);
 				return false;
 			}
-			console.log(body);
+
 			let {code,result,message} = JSON.parse(body);
 			if(code === 100){
 				let {host} = result;
-				this.connect(host,key);
+				this.host = host;
+				this.init();
+				this.callback(JSON.parse(body));
+				return console.log(`您的访问域名：http://${host}.wkdl.ltd`);
 			}
-			this.callback(JSON.parse(body));
-			return console.log(message);
+			console.log(message);
 		})
 	}
-	connect(host,key){
-		//var socket = io('http://120.24.169.84:3838');
-		let socket = io(`${serverHost}:${serverPort}?host=${host}&key=${key}`);
-		let client = {};
+	init(){
+		this.socket = io(serverHost, {
+			query: {
+				host: this.host,
+				key : this.key
+			}
+		});
+		this.clients = {};
 
-		socket.on('connect', () => {
-			console.log('socket.io server connected');
+		this.start();
+	}
+	connectSuccess(){
 
-			socket.on('message', data => {
-				let {name,buffer} = data;
-				let clientFree = client[name];
-				if (!name) {
-					return;
-				}
-				if (clientFree) {
-					clientFree.write(buffer);
-				} else {
-					clientFree = new net.Socket();
-					clientFree.connect(this.listenPort, '127.0.0.1', function () {
-						//写到浏览器
-						clientFree.write(buffer);
+	}
+	start() {
+		this.socket.on('connect', () => {
+			this.connectSuccess();
+			console.log('server connected (连接成功)');
+		});
+		this.socket.on('request', data => {
+			if (!data.addr) {
+				return;
+			}
+			let addr = data.addr;
+			if (!this.clients[addr]) {
+				this.clients[addr] = new net.Socket();
+				this.clients[addr].connect(this.port, '127.0.0.1', () => {
+					this.clients[addr].write(data.buffer);
+				});
+
+				this.clients[addr].on('data', (buffer) => {
+					this.socket.emit('response', {
+						addr: addr,
+						buffer: buffer
+					})
+				});
+				let end = () => {
+					this.socket.emit('response/end', {
+						addr: addr,
+						buffer: null
 					});
-					clientFree.on('data', function (buf) {
-						socket.emit('message', {
-							name: name,
-							buffer: buf
-						})
-					});
-					clientFree.on('end', () => {
-						socket.emit('message/end', {
-							name: name,
-							buffer: null
-						})
-					});
-					clientFree.on('error', err => {
-						console.log(err);
-						socket.emit('message/end', {
-							name: name,
-							buffer: null
-						})
-					});
-				}
-			});
+					if (this.clients[addr]) {
+						delete this.clients[addr];
+					}
+				};
+				this.clients[addr].on('end', end);
+				this.clients[addr].on('close', end);
+				this.clients[addr].on('error', end);
+			} else {
+				this.clients[addr].write(data.buffer);
+			}
+		});
+		this.socket.on('close', message => {
+			console.log(message);
+			this.socket.close();
+			process.exit(1);
+		});
+		this.socket.on('disconnect', () => {
+			this.clients = {}
 		});
 	}
 }
+
 
 class Interface {
 	constructor(){
@@ -113,14 +132,18 @@ class Model {
 	* 连接
 	* */
 	connect(key,port){
-		new Client(key,port,(data)=>{
+		let client = new Client(key,port,(data)=>{
 			let {code,message,result} = data;
+			console.log(data);
 			if(code == 100){
 				this.httpAddress = result.http;
 			}
 			this.toast(message);
 			this.render();
 		})
+		client.connectSuccess =  ()=>{
+			this.toast('连接成功～～～')
+		}
 	}
 	/*
      *  发布
@@ -182,7 +205,7 @@ class Model {
 		this.render();
 	}
 	openRegister(){
-		this.interface.openLink('http://www.wkproxy.com');
+		this.interface.openLink('http://www.wkdl.ltd');
 	}
 
 
